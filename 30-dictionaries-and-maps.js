@@ -1,30 +1,21 @@
-var n = parseInt(readLine());
+function processData(input) {
+    input = input.split('\n')
+    var N = parseInt(input[0])
 
-    pbookname = [];
-    pbooknums = [];
-    query = [];
-    
-    for (i=0; i<n; i++) {
-         pbook = [];
-         pbook = readLine().split(' ');
-         pbookname.push(pbook[0])
-         pbooknums.push(pbook[1]);  
+    var phonebook = []
+    for (var k = 0; k< N; k++){
+        var line = input[k+1]
+        line = line.split(' ')
+        phonebook[line[0]] = line[1]
     }
-    
-    for (j=i; j<n*2; j++) {
-        if (readLine != "") {
-            query = readLine(); 
-            pos = pbookname.indexOf(query);
-            if (pos < 0) {
-                console.log("Not found");
-            } else {
-                console.log(query +"="+ pbooknums[pos]);
-            }
+
+    for (var k = N+1; k < input.length; k++ ){
+        var num = (phonebook[input[k]])
+        if (num !== undefined){
+            console.log(input[k]+'='+num)
         } else {
-            break;
+            console.log('Not found')
         }
     }
-    
-    console.log("Names " + pbookname);
-    console.log("Numbers " + pbooknums);
-    console.log("Queries " + query);
+
+} 
