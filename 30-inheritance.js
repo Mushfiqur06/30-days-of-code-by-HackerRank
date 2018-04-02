@@ -1,5 +1,5 @@
 
-calculate() {
+function calculate() {
     var sum = this.scores.reduce(function(sum, num) 
     { 
         return sum + num;
