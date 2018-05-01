@@ -1,6 +1,3 @@
-var a = 10;
-var b = 20;
+var sum = (a, b) => a + b;
 
-var result = a + b;
-
-console.log(result);
+sum(10, 20);
